@@ -5,7 +5,7 @@ import { currentUser } from "@clerk/nextjs/server"
 const createPostAction = async (userPostData:FormData) => {
   const loginUser=currentUser();
   if(!loginUser){
-    throw new Error('User not authenticated');
+    throw new Error('User not authenticated!');
   }
 
   const postText=userPostData.get('postInput') as string;
